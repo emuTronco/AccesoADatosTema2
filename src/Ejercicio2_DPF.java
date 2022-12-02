@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class Ejercicio2_DPF {
     private static final String CONNECTION_URL = "jdbc:mysql://localhost/world";
     private static final String USERNAME = "world";
     private static final String PASSWORD = "World123";
@@ -15,7 +15,7 @@ public class Ejercicio2 {
             PreparedStatement ps;
             int opcion = -1;
             while (opcion != 1 && opcion != 2) {    //Con este bucle decidimos que sentencia SQL cargar
-                System.out.print("¿Que consulta quieres realizar? 1 o 2: ");
+                System.out.print("¿Que consulta quieres realizar?\n1.- Simple\n2.- Compleja\n");
                 opcion = sc.nextInt();
                 if (opcion == 1) {
                     ps = conn.prepareStatement(consulta_sql);
