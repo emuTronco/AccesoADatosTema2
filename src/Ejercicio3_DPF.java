@@ -16,12 +16,13 @@ public class Ejercicio3_DPF {
             PreparedStatement ps;
             conn.setAutoCommit(false); // Cambiamos el modo de la conexion para que no haga autocommit
             int opcion = -1;
-            while (opcion != 1 && opcion != 2) {    //Con este bucle decidimos que sentencia SQL cargar
-                System.out.println("¿Que consulta quieres realizar?\n1.- Añadir\n2.-Editar\n3.- Borrar\n");
+            while (opcion != 1 && opcion != 2 && opcion != 3) {    //Con este bucle decidimos que sentencia SQL cargar
+                System.out.println("¿Que consulta quieres realizar?\n1.- Añadir\n2.- Editar\n3.- Borrar\n");
                 opcion = Integer.parseInt(sc.nextLine());
                 if (opcion == 1) {
                     ps = conn.prepareStatement(consulta_aniadir);
                     aniadirPais(ps);
+                    conn.commit();
                 } else if (opcion == 2) {
                     ps = conn.prepareStatement(consulta_editar);
                     editarPais(ps);
